@@ -8,6 +8,11 @@ config("v8windbg_config") {
   # Required for successful compilation of SDK header file DbgModel.h.
   cflags_cc = [ "/Zc:twoPhase-" ]
 
+  if(is_win && !is_clang) {
+    # Avoid "The contents of <optional> are available only with C++17 or later."
+    # warning from MSVC
+    cflags_cc += [ "/std:c++latest" ]
+  }
   include_dirs = [ "../.." ]
 }
 

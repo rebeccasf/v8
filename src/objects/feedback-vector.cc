@@ -117,9 +117,9 @@ Handle<FeedbackMetadata> FeedbackMetadata::New(IsolateT* isolate,
   return metadata;
 }
 
-template Handle<FeedbackMetadata> FeedbackMetadata::New(
+template V8_EXPORT Handle<FeedbackMetadata> FeedbackMetadata::New(
     Isolate* isolate, const FeedbackVectorSpec* spec);
-template Handle<FeedbackMetadata> FeedbackMetadata::New(
+template V8_EXPORT Handle<FeedbackMetadata> FeedbackMetadata::New(
     LocalIsolate* isolate, const FeedbackVectorSpec* spec);
 
 bool FeedbackMetadata::SpecDiffersFrom(
