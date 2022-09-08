@@ -1277,7 +1277,7 @@ config("toolchain") {
       "-Wno-shadow",
     ]
 
-    if (v8_current_cpu != "mips" && v8_current_cpu != "mipsel") {
+    if (v8_current_cpu != "mips" && v8_current_cpu != "mipsel" && v8_current_cpu != "riscv64") {
       # We exclude MIPS because the IsMipsArchVariant macro causes trouble.
       cflags += [ "-Wunreachable-code" ]
     }
